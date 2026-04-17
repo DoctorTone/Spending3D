@@ -1,7 +1,7 @@
-import Model from "./Model";
+import Floor from "./Floor";
 
 const Scene = () => {
-  return <Model />;
+  return <Floor />;
 };
 
 export default Scene;

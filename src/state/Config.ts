@@ -22,7 +22,7 @@ export const CONFIGURATIONS = {
   small: new Vector3(0, 0.5, 3),
   landscape: new Vector3(0, 0.5, 3),
   large: new Vector3(0, 0.5, 3),
-  extraLarge: new Vector3(0, 0.5, 3),
+  extraLarge: new Vector3(0, 6, 10),
 };
 
 export type ScreenSize = {
