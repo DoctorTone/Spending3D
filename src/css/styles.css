@@ -27,3 +27,26 @@ body {
   left: 1%;
   bottom: 2%;
 }
+#file-drop-zone {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+  height: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: 2px dashed rgba(255, 255, 255, 0.6);
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.35);
+  color: white;
+  font-family: sans-serif;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+#file-drop-zone.dragging {
+  background: rgba(255, 165, 0, 0.25);
+  border-color: orange;
+}
