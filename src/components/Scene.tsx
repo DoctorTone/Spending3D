@@ -1,7 +1,13 @@
+import CategoryBars from "./CategoryBars";
 import Floor from "./Floor";
 
 const Scene = () => {
-  return <Floor />;
+  return (
+    <>
+      <Floor />
+      <CategoryBars />
+    </>
+  );
 };
 
 export default Scene;
