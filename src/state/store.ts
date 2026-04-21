@@ -1,7 +1,18 @@
 import { create } from "zustand";
 import type { ScreenSize } from "./Config";
 
-export const CATEGORIES = ["Groceries", "Coffee", "Petrol"] as const;
+export const CATEGORIES = [
+  "Groceries",
+  "Coffee",
+  "Petrol",
+  "Lunch",
+  "Garden",
+  "DIY",
+  "Consumables",
+  "Clothes",
+  "Bills",
+  "Misc",
+] as const;
 export type Category = (typeof CATEGORIES)[number] | "";
 
 export type SpendingEntry = {
@@ -22,6 +33,8 @@ type FrameworkState = {
   spendingData: SpendingEntry[];
   setSpendingData: (data: SpendingEntry[]) => void;
   updateSpendingEntry: (index: number, updates: Partial<SpendingEntry>) => void;
+  categoryTotals: Partial<Record<Category, number>>;
+  setCategoryTotals: (totals: Partial<Record<Category, number>>) => void;
 };
 
 const useStore = create<FrameworkState>((set) => ({
@@ -40,6 +53,8 @@ const useStore = create<FrameworkState>((set) => ({
         i === index ? { ...entry, ...updates } : entry,
       ),
     })),
+  categoryTotals: {},
+  setCategoryTotals: (totals) => set(() => ({ categoryTotals: totals })),
 }));
 
 export default useStore;

@@ -9,7 +9,11 @@ import {
   type GridCellParams,
   type GridColDef,
 } from "@mui/x-data-grid";
-import useStore, { CATEGORIES, type SpendingEntry } from "../state/store";
+import useStore, {
+  CATEGORIES,
+  type Category,
+  type SpendingEntry,
+} from "../state/store";
 
 const baseColDef: Partial<GridColDef> = {
   sortable: false,
@@ -59,9 +63,26 @@ const DataDialog = () => {
   const setShowDataDialog = useStore((state) => state.setShowDataDialog);
   const spendingData = useStore((state) => state.spendingData);
   const updateSpendingEntry = useStore((state) => state.updateSpendingEntry);
+  const setCategoryTotals = useStore((state) => state.setCategoryTotals);
   const apiRef = useGridApiRef();
 
   const handleClose = () => {
+    setShowDataDialog(false);
+  };
+
+  const handleOk = () => {
+    const totals: Partial<Record<Category, number>> = {};
+    for (const entry of spendingData) {
+      if (entry.category === "") continue;
+      totals[entry.category] =
+        (totals[entry.category] ?? 0) + Math.abs(entry.amount);
+    }
+    for (const key of Object.keys(totals) as Category[]) {
+      totals[key] = Math.round((totals[key] ?? 0) * 100) / 100;
+    }
+    setCategoryTotals(totals);
+    // DEBUG
+    console.log("Totals = ", totals);
     setShowDataDialog(false);
   };
 
@@ -116,7 +137,7 @@ const DataDialog = () => {
               border: "none",
               "& .MuiDataGrid-columnHeaders": {
                 backgroundColor: "#333333",
-                color: "#ffffff",
+                color: "#222222",
               },
               "& .MuiDataGrid-cell": {
                 color: "#222222",
@@ -133,7 +154,7 @@ const DataDialog = () => {
         </div>
       </DialogContent>
       <DialogActions>
-        <Button variant="contained" onClick={handleClose} sx={{ mr: 1, mb: 1 }}>
+        <Button variant="contained" onClick={handleOk} sx={{ mr: 1, mb: 1 }}>
           OK
         </Button>
       </DialogActions>

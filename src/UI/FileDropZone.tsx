@@ -18,8 +18,6 @@ const FileDropZone = () => {
       header: false,
       skipEmptyLines: true,
       complete: (results) => {
-        // DEBUG
-        console.log("Results = ", results);
         const entries: SpendingEntry[] = results.data
           .map(([date, description, amount]) => ({
             date: date?.trim() ?? "",
