@@ -48,6 +48,15 @@ const CategoryBars = () => {
             >
               {category}
             </Text>
+            <Text
+              position={[x, height + 0.2, 0]}
+              fontSize={0.35}
+              color="#000000"
+              anchorX="center"
+              anchorY="bottom"
+            >
+              {`£${amount.toFixed(2)}`}
+            </Text>
           </group>
         );
       })}
