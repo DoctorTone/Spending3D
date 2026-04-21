@@ -8,10 +8,10 @@ const UI = () => {
   return (
     <>
       <Copyright />
-      <Controls />
+      {/* <Controls /> */}
       <FileDropZone />
       <DataDialog />
-      <Info />
+      {/* <Info /> */}
     </>
   );
 };
