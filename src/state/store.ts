@@ -20,7 +20,6 @@ export type SpendingEntry = {
   description: string;
   amount: number;
   category: Category;
-  include: boolean;
 };
 
 type FrameworkState = {

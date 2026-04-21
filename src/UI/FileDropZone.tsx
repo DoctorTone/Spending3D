@@ -24,7 +24,6 @@ const FileDropZone = () => {
             description: description?.trim() ?? "",
             amount: Number(amount),
             category: "" as const,
-            include: false,
           }))
           .filter(
             (entry) =>

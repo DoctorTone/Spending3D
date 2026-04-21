@@ -41,14 +41,6 @@ const columns: GridColDef[] = [
     editable: true,
     flex: 1,
   },
-  {
-    ...baseColDef,
-    field: "include",
-    headerName: "Included",
-    type: "boolean",
-    editable: true,
-    flex: 0.6,
-  },
 ];
 
 const parseDate = (d: string) => {
