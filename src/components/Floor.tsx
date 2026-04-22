@@ -1,23 +1,21 @@
 import { Grid } from "@react-three/drei";
+import useStore from "../state/store";
 
 const Floor = () => {
+  const floorColor = useStore((state) => state.floorColor);
   return (
     <>
-      <mesh rotation={[-Math.PI / 2, 0, 0]} receiveShadow>
-        <planeGeometry args={[75, 75]} />
-        <meshStandardMaterial color="#888888" />
-      </mesh>
       <Grid
-        args={[50, 50]}
+        args={[10, 10]}
         position={[0, 0.01, 0]}
-        cellSize={1}
+        cellSize={0.5}
         cellThickness={1}
         cellColor="#6f6f6f"
         sectionSize={5}
         sectionThickness={1.5}
-        sectionColor="#3f3f3f"
+        sectionColor="#9d4b4b"
         infiniteGrid
-        fadeDistance={50}
+        fadeDistance={25}
         fadeStrength={1}
       />
     </>

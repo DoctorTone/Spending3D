@@ -42,7 +42,7 @@ const CategoryBars = () => {
             <Text
               position={[x, 0.05, BAR_RADIUS + 0.8]}
               fontSize={0.35}
-              color="#000000"
+              color="#ffffff"
               anchorX="center"
               anchorY="bottom"
             >
@@ -51,7 +51,7 @@ const CategoryBars = () => {
             <Text
               position={[x, height + 0.2, 0]}
               fontSize={0.35}
-              color="#000000"
+              color="#ffffff"
               anchorX="center"
               anchorY="bottom"
             >

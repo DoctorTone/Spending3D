@@ -1,9 +1,17 @@
-import { Sky } from "@react-three/drei";
+import { useThree } from "@react-three/fiber";
+import { useEffect } from "react";
+import { Color } from "three";
+import useStore from "../state/store";
 
 const DaySky = () => {
-  return (
-    <Sky distance={1000} sunPosition={[500, 150, -1000]} turbidity={0.1} />
-  );
+  const backgroundColor = useStore((state) => state.backgroundColor);
+  const scene = useThree((state) => state.scene);
+
+  useEffect(() => {
+    scene.background = new Color(backgroundColor);
+  }, [backgroundColor, scene]);
+
+  return null;
 };
 
 export default DaySky;

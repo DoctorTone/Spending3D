@@ -34,6 +34,10 @@ type FrameworkState = {
   updateSpendingEntry: (index: number, updates: Partial<SpendingEntry>) => void;
   categoryTotals: Partial<Record<Category, number>>;
   setCategoryTotals: (totals: Partial<Record<Category, number>>) => void;
+  backgroundColor: string;
+  setBackgroundColor: (color: string) => void;
+  floorColor: string;
+  setFloorColor: (color: string) => void;
 };
 
 const useStore = create<FrameworkState>((set) => ({
@@ -54,6 +58,10 @@ const useStore = create<FrameworkState>((set) => ({
     })),
   categoryTotals: {},
   setCategoryTotals: (totals) => set(() => ({ categoryTotals: totals })),
+  backgroundColor: "#303035",
+  setBackgroundColor: (color) => set(() => ({ backgroundColor: color })),
+  floorColor: "#888888",
+  setFloorColor: (color) => set(() => ({ floorColor: color })),
 }));
 
 export default useStore;

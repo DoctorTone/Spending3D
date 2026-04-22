@@ -31,6 +31,14 @@ body {
   right: 1%;
   top: 2%;
 }
+#title {
+  left: 1%;
+  top: 2%;
+}
+#show-data {
+  left: 1%;
+  top: 100px;
+}
 #file-drop-zone {
   top: 50%;
   left: 50%;
@@ -48,7 +56,9 @@ body {
   font-family: sans-serif;
   cursor: pointer;
   user-select: none;
-  transition: background 0.15s ease, border-color 0.15s ease;
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease;
 }
 #file-drop-zone.dragging {
   background: rgba(255, 165, 0, 0.25);
