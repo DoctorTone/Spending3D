@@ -1,4 +1,4 @@
-import { useState, DragEvent, ChangeEvent, useRef } from "react";
+import { useState, type DragEvent, type ChangeEvent, useRef } from "react";
 import Papa from "papaparse";
 import useStore, { type SpendingEntry } from "../state/store";
 

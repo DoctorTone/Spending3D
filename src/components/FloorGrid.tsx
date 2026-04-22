@@ -1,8 +1,6 @@
 import { Grid } from "@react-three/drei";
-import useStore from "../state/store";
 
-const Floor = () => {
-  const floorColor = useStore((state) => state.floorColor);
+const FloorGrid = () => {
   return (
     <>
       <Grid
@@ -22,4 +20,4 @@ const Floor = () => {
   );
 };
 
-export default Floor;
+export default FloorGrid;

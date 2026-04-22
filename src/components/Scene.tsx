@@ -1,10 +1,10 @@
 import CategoryBars from "./CategoryBars";
-import Floor from "./Floor";
+import FloorGrid from "./FloorGrid";
 
 const Scene = () => {
   return (
     <>
-      <Floor />
+      <FloorGrid />
       <CategoryBars />
     </>
   );

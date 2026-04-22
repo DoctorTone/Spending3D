@@ -18,7 +18,7 @@ const ShowDataButton = () => {
 
   return (
     <div id="show-data" className="panel">
-      <Stack spacing={1} alignItems="flex-start">
+      <Stack spacing={1}>
         <Button variant="contained" onClick={() => setShowDataDialog(true)}>
           Show Data
         </Button>
